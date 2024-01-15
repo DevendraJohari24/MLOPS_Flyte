@@ -1,3 +1,7 @@
 flytekit>=1.5.0
 pandas
 scikit-learn
+dataclasses_json
+joblib
+xgboost
+urllib3
