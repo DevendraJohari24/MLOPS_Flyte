@@ -65,12 +65,12 @@ def normalize_csv_file(
 if __name__ == "__main__":
     default_files = [
         (
-            "https://people.sc.fsu.edu/~jburkardt/data/csv/biostats.csv",
+            "biostats.csv",
             ["Name", "Sex", "Age", "Heights (in)", "Weight (lbs)"],
             ["Age"],
         ),
         (
-            "https://people.sc.fsu.edu/~jburkardt/data/csv/faithful.csv",
+            "faithful.csv",
             ["Index", "Eruption length (mins)", "Eruption wait (mins)"],
             ["Eruption length (mins)"],
         ),
@@ -83,3 +83,7 @@ if __name__ == "__main__":
             columns_to_normalize=columns_to_normalize,
         )
         print(f"Running normalize_csv_file workflow on {csv_url}: " f"{normalized_columns}")
+
+
+
+# pyflyte run --remote --image=registry.accounts.intern/joharide/flyte_diabetes:fourth flyte_file.py  normalize_csv_file --csv_url="https://people.sc.fsu.edu/~jburkardt/data/csv/biostats.csv" --column_names='["Name", "Sex", "Age", "Heights (in)", "Weight (lbs)"]' --columns_to_normalize='["Age"]'
