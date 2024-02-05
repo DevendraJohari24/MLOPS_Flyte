@@ -13,9 +13,6 @@ from flytekit.types.schema import FlyteSchema
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 from xgboost import XGBClassifier
-import os
-import urllib.request
-
 
 DATASET_COLUMNS = OrderedDict(
     {
@@ -147,11 +144,7 @@ def diabetes_xgboost_model(
 
 
 if __name__ == "__main__":
-    print(f"Running {__file__} main...")
     # download dataset file
-    file_name = "pima-indians-diabetes.data.csv"
-    urllib.request.urlretrieve("https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv", file_name)
-    file_path = os.path.join(os.getcwd(),file_name)
-    print(file_path)
-    print(diabetes_xgboost_model(dataset=file_path))
+    print(f"Running {__file__} main...")
+    print(diabetes_xgboost_model())
 
