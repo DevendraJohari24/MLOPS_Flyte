@@ -45,10 +45,6 @@ class FlyteTypes(DataClassJSONMixin):
 
 @task
 def upload_data() -> FlyteTypes:
-    """
-    Flytekit will upload FlyteFile, FlyteDirectory and StructuredDataset to the blob store,
-    such as GCP or S3.
-    """
     # 1. StructuredDataset
     df = pd.DataFrame({"Name": ["Tom", "Joseph"], "Age": [20, 22]})
 
