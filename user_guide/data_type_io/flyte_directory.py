@@ -83,3 +83,6 @@ def download_and_normalize_csv_files(
         columns_metadata=columns_metadata,
         columns_to_normalize_metadata=columns_to_normalize_metadata,
     )
+
+
+#  pyflyte run --remote --image=registry.accounts.intern/joharide/flyte_diabetes:fourth flyte_directory.py download_and_normalize_csv_files --csv_urls='["biostats.csv", "faithful.csv"]' --columns_metadata='[["Name", "Sex", "Age", "Heights (in)", "Weight (lbs)"],["Index", "Eruption length (mins)", "Eruption wait (mins)"]]' --columns_to_normalize_metadata='[["Age"],["Eruption length (mins)"]]'
